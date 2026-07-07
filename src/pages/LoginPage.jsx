@@ -10,10 +10,10 @@ const LoginPage = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setErrors('');
+        setErrors({email:'', password:''});
 
 
-    if (!/^[a-zA-Z0-9._%-+]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{5,46}$/.test(email)) {
+    if (!/^[a-zA-Z0-9.! # \$ % & ' * + - / = ? ^ _  { | } ~.]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/.test(email)) {
         setErrors({...errors, email:'Email must use lowercase letters, uppercase letters, and special characters (! @ # $ %) only'})
         console.log('Email must use lowercase letters, uppercase letters, and special characters (! @ # $ %) only');
     } else if ( password.length < 8) {
@@ -48,6 +48,7 @@ const LoginPage = (props) => {
     <input type="email" value={email}
     onChange={(e) => setEmail(e.target.value)}
     />
+    {errors.email && <span>{errors.email}</span>}
     </label>
     <br/>
     <label>
@@ -55,6 +56,7 @@ const LoginPage = (props) => {
     <input type="password" value={password}
     onChange={(e) => setPassword(e.target.value)}
     />
+    {errors.password && <span>{errors.password}</span>}
     </label>
     <button type="submit">Open Vault</button>
     </form>

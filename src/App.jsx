@@ -10,6 +10,10 @@ function App() {
   const [accounts, setAccounts] = useState ([])
   const [isAuthorized, setIsAuthorized] = useState (false);
 
+  const handleDelete = (id) => {
+    setItems(items.filter((item) => id !== item.id))
+  };
+
   if (isAuthorized) {
   return (
     <main className='App'>

@@ -13,11 +13,19 @@ function App() {
   const handleDelete = (id) => {
     setItems(items.filter((item) => id !== item.id))
   };
+  const handleAdd = (newItem) => {
+    setItems([...items, newItem])
+  };
+  const handleEdit = (updatedItem) => {
+    setItems(items.map((item) => item.id === updatedItem.id ? updatedItem : item));
+  };
+
+
 
   if (isAuthorized) {
   return (
     <main className='App'>
-     <DashboardPage />
+     <DashboardPage items={items} currentUser={currentUser} onAdd={handleAdd} onDelete={handleDelete} onEdit={handleEdit} />
     </main>
   );
   } else {
@@ -27,6 +35,7 @@ function App() {
     </main>
 );
 }
+
 };
 
 export default App

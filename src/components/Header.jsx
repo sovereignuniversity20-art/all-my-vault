@@ -41,7 +41,7 @@ const VaultHeader = ({currentUser, onOpenForm, searchQuery, activeFilter, onFilt
         </label>
         </div>
         
-        <h2>{(currentUser.name)}</h2>
+        {currentUser && <h2>{(currentUser.name)}</h2>}
     </header> 
     )
 };

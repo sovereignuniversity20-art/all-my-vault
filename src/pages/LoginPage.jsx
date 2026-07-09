@@ -45,7 +45,8 @@ const LoginPage = (props) => {
     
     return (
     <div className="login">
-    <h1>Login to Acces Your Vault</h1>
+    <h1>All My Vault</h1>
+    <h4>Enter Your Email and Password to Access Vault</h4>
     <form onSubmit={handleSubmit}>
     <label>
     Email:

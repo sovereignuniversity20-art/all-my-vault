@@ -36,7 +36,8 @@ const LoginPage = (props) => {
     } else if (currentStatus === 'signup' &&  password !== confirmPassword) {
         setErrors({...errors, confirmPassword:"Passwords do not match, please re-enter."});
     } else {
-        props.onLogin(true);
+        props.onLogin({
+            name: currentStatus === 'signup' ? name: email, email: email});
         console.log('Password is valid!');
     }
     };

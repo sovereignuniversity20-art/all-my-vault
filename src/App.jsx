@@ -19,7 +19,10 @@ function App() {
   const handleEdit = (updatedItem) => {
     setItems(items.map((item) => item.id === updatedItem.id ? updatedItem : item));
   };
-
+  const handleLogin = (userInfo) => {
+    setCurrentUser(userInfo);
+    setIsAuthorized(true)
+  }
 
 
   if (isAuthorized) {
@@ -31,7 +34,7 @@ function App() {
   } else {
     return (
     <main className='App'>
-      <LoginPage onLogin={setIsAuthorized} />
+      <LoginPage onLogin={handleLogin} />
     </main>
 );
 }

@@ -2,11 +2,11 @@ import './App.css';
 import { useState } from 'react';
 import LoginPage from './pages/LoginPage.jsx';
 import DashboardPage from './pages/DashboardPage.jsx';
-
+import sampleItems from './data/sampleData.js';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
-  const [items, setItems] = useState ([]);
+  const [items, setItems] = useState (sampleItems);
   const [accounts, setAccounts] = useState ([])
   const [isAuthorized, setIsAuthorized] = useState (false);
 

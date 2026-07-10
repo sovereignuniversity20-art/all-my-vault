@@ -1,6 +1,7 @@
  import { useState } from "react";
- import VaultHeader from "../components/Header";
-
+ import VaultHeader from "../components/VaultHeader";
+ import MediaCard from "../components/MediaCard";
+ 
  const DashboardPage = ({items,currentUser, onAdd, onDelete, onEdit}) => {
     const [isFormOpen, setIsFormOpen] = useState(false);
     const [editingItem, setEditingItem] = useState(null);
@@ -16,7 +17,16 @@
         <VaultHeader currentUser={currentUser} onOpenForm={onOpenForm} 
         searchQuery={searchQuery} activeFilter={activeFilter} 
         onFilterChange={setActiveFilter} onSearchChange={setSearchQuery} />
+        {items.map((item) => (
+       <MediaCard 
+       key={item.id} 
+       {...item} 
+       onDelete={onDelete} 
+       onEdit={onEdit}/> 
+       ))}
+        
     </main>
+       
     )
     
  };

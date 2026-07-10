@@ -5,15 +5,15 @@ const sampleItems = [
   type: "pdf",
   tags: ["research", "urban farming", "agriculture"],
   dateAdded: "7.7.26",
-  thumbnail: 0
+  thumbnail: null
 },
 {
   id:2,
   title: "Eifel Tower visit",
-  type: "jpg",
+  type: "image",
   tags: ["Europe", "travel", "Paris", "study-abroad"],
   dateAdded: "7.7.26",
-  thumbnail: 0
+  thumbnail: null
 }, 
 {
   id:3,
@@ -21,15 +21,15 @@ const sampleItems = [
   type: "pdf",
   tags: ["doctorate", "study", "education", "experiential learning"],
   dateAdded: "7.7.26",
-  thumbnail: 0 
+  thumbnail: null 
 },
 {
   id:4,
   title: "Sovereign University logo",
-  type: "png",
+  type: "image",
   tags: ["marketing", "business", "logo"],
   dateAdded: "7.7.26",
-  thumbnail: 0  
+  thumbnail: null 
 },
 {
   id:5,
@@ -37,14 +37,16 @@ const sampleItems = [
   type: "pdf",
   tags: ["tech", "professional", "study tool", "experiential learning"],
   dateAdded: "7.7.26",
-  thumbnail: 0    
+  thumbnail: null   
 },
 {
   id:6,
   title: "website background from midjourney",
-  type: "png",
+  type: "image",
   tags: ["ai generatiom", "marketing", "web design", "tech"],
   dateAdded: "7.7.26",
-  thumbnail: 0
+  thumbnail: null
 }
-]
+];
+
+export default sampleItems;

@@ -13,7 +13,9 @@
 
     return (
     <main className="dashboard">
-        <VaultHeader currentUser={currentUser} onOpenForm={onOpenForm} searchQuery={searchQuery} activeFilter={activeFilter} onFilterChange={setActiveFilter} onSearchChange={setSearchQuery} />
+        <VaultHeader currentUser={currentUser} onOpenForm={onOpenForm} 
+        searchQuery={searchQuery} activeFilter={activeFilter} 
+        onFilterChange={setActiveFilter} onSearchChange={setSearchQuery} />
     </main>
     )
     

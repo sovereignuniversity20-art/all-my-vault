@@ -16,13 +16,16 @@ const MediaFormModal = ({isOpen, editingItem, onSubmit, onClose}) => {
         if (!file) return;
 
         let type = '';
-        if (file.type.startsWith('image/')) type='image';
+        if (file.type.startsWith('image/')) type='image'        
         else if (file.type.startsWith('audio/')) type = 'audio';
         else if (file.type.startsWith('video/')) type = 'video';
         else if (file.type === 'application/pdf') type = 'pdf';
         else type = 'doc';
 
-        setFormValues({...formValues, type: type, title: file.name});
+        let thumbnail = null;
+        if (type === 'image') thumbnail = URL.createObjectURL(file);
+       
+        setFormValues({...formValues, type: type, title: file.name, thumbnail: thumbnail});
     };
 
     const handleSubmit = () => {

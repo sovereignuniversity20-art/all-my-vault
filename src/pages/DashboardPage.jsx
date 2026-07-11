@@ -27,12 +27,24 @@ const handleOpenEdit = (item) => {
     setIsFormOpen(true);
 };
 
+let visibleItems = items;
+if (activeFilter !== '' && activeFilter !== 'all') {
+    visibleItems = visibleItems.filter((item) => item.type === activeFilter);  
+}
+
+if (searchQuery !== '') {
+    visibleItems = visibleItems.filter((item) =>
+        item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        item.tags.some((tag) => tag.toLowerCase().includes(searchQuery.toLowerCase()))
+    );
+}
+
     return (
     <main className="dashboard">
         <VaultHeader currentUser={currentUser} onOpenForm={onOpenForm} 
         searchQuery={searchQuery} activeFilter={activeFilter} 
         onFilterChange={setActiveFilter} onSearchChange={setSearchQuery} />
-        {items.map((item) => (
+        {visibleItems.map((item) => (
        <MediaCard 
        key={item.id} 
        {...item} 

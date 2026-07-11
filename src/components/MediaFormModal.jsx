@@ -26,12 +26,16 @@ const MediaFormModal = ({isOpen, editingItem, onSubmit, onClose}) => {
     };
 
     const handleSubmit = () => {
+        const tagsArray = typeof formValues.tags === 'string'
+        ? formValues.tags.split(',').map(tag => tag.trim())
+        : formValues.tags;
         const itemData = {
             ...formValues,
+            tags: tagsArray,
             dateAdded: new Date().toLocaleDateString(),
             id: editingItem ? editingItem.id : Date.now().toString()
         };
-
+        
         onSubmit(itemData);
         onClose();
 
@@ -58,7 +62,7 @@ return (
        <input type="file" onChange={handleFileChange}/> 
     </label>
 
-    <button type="submit" onClick={handleSubmit}>Save
+    <button type="button" onClick={handleSubmit}>Save
     </button>
     
     <button type="button" onClick={onClose}>Cancel 

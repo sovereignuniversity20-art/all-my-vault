@@ -81,7 +81,9 @@ const LoginPage = (props) => {
         </label>
     )} 
     <button type="submit">{currentStatus === 'signup' ? "Create Vault" : "Open Vault"}</button>
-    <button type="button" onClick={() => currentStatus === 'login' ? setCurrentStatus('signup') : setCurrentStatus ('login')}>{currentStatus === 'signup' ? "Already have an account? Log in here" : "Sign up for an account"}</button>
+    <button type="button" onClick={() => currentStatus === 'login' ? setCurrentStatus('signup') : 
+    setCurrentStatus ('login')}>{currentStatus === 'signup' ? "Already have an account? Log in here" : 
+    "Sign up for an account"}</button>
    
     </form>
     </div>

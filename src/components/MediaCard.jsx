@@ -4,7 +4,7 @@ const MediaCard = ({id, title,type, tags, thumbnail, dateAdded, onDelete, onEdit
     
 
     return(
-        <article>
+        <article className="mediacard">
         <ReusableButton label="🗑" onClick={() => onDelete(id)} variant="delete" />
         <ReusableButton label="✏️" onClick={() => onEdit({id, title, type, tags, thumbnail, dateAdded})} />
         <h3>{title}</h3>

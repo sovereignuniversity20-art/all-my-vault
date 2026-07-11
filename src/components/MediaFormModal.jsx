@@ -11,6 +11,32 @@ const MediaFormModal = ({isOpen, editingItem, onSubmit, onClose}) => {
         }  
     }, [editingItem]);
     
+    const handleFileChange = (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+
+        let type = '';
+        if (file.type.startsWith('image/')) type='image';
+        else if (file.type.startsWith('audio/')) type = 'audio';
+        else if (file.type.startsWith('video/')) type = 'video';
+        else if (file.type === 'application/pdf') type = 'pdf';
+        else type = 'doc';
+
+        setFormValues({...formValues, type: type, title: file.name});
+    };
+
+    const handleSubmit = () => {
+        const itemData = {
+            ...formValues,
+            dateAdded: new Date().toLocaleDateString(),
+            id: editingItem ? editingItem.id : Date.now().toString()
+        };
+
+        onSubmit(itemData);
+        onClose();
+
+    };
+
     if(!isOpen) return null;
 
 return (

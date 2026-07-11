@@ -3,12 +3,14 @@ import { useState } from 'react';
 import LoginPage from './pages/LoginPage.jsx';
 import DashboardPage from './pages/DashboardPage.jsx';
 import sampleItems from './data/sampleData.js';
+import { Route, Routes, Navigate, useNavigate } from 'react-router-dom';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
   const [items, setItems] = useState (sampleItems);
   const [accounts, setAccounts] = useState ([])
   const [isAuthorized, setIsAuthorized] = useState (false);
+  const navigate = useNavigate();
 
   const handleDelete = (id) => {
     setItems(items.filter((item) => id !== item.id))
@@ -22,23 +24,21 @@ function App() {
   const handleLogin = (userInfo) => {
     setCurrentUser(userInfo);
     setIsAuthorized(true)
+    navigate('/dashboard');
   }
 
-
-  if (isAuthorized) {
+ 
   return (
     <main className='App'>
-     <DashboardPage items={items} currentUser={currentUser} onAdd={handleAdd} onDelete={handleDelete} onEdit={handleEdit} />
+      <Routes>
+        <Route path="/" element={<LoginPage onLogin={handleLogin} />} />
+        <Route path="/dashboard" element={isAuthorized ? <DashboardPage items={items} 
+        currentUser={currentUser} onAdd={handleAdd} onDelete={handleDelete} onEdit={handleEdit} /> 
+        : <Navigate to="/" />} />
+      </Routes>
     </main>
-  );
-  } else {
-    return (
-    <main className='App'>
-      <LoginPage onLogin={handleLogin} />
-    </main>
-);
-}
 
+  )
 };
 
-export default App
+export default App;

@@ -36,7 +36,8 @@ const LoginPage = (props) => {
     } else if (currentStatus === 'signup' &&  password !== confirmPassword) {
         setErrors({...errors, confirmPassword:"Passwords do not match, please re-enter."});
     } else {
-        props.onLogin(true);
+        props.onLogin({
+            name: currentStatus === 'signup' ? name: email, email: email});
         console.log('Password is valid!');
     }
     };
@@ -45,7 +46,8 @@ const LoginPage = (props) => {
     
     return (
     <div className="login">
-    <h1>Login to Acces Your Vault</h1>
+    <h1>All My Vault</h1>
+    <h4>Enter Your Email and Password to Access Vault</h4>
     <form onSubmit={handleSubmit}>
     <label>
     Email:
@@ -79,7 +81,9 @@ const LoginPage = (props) => {
         </label>
     )} 
     <button type="submit">{currentStatus === 'signup' ? "Create Vault" : "Open Vault"}</button>
-    <button type="button" onClick={() => currentStatus === 'login' ? setCurrentStatus('signup') : setCurrentStatus ('login')}>{currentStatus === 'signup' ? "Already have an account? Log in here" : "Sign up for an account"}</button>
+    <button type="button" onClick={() => currentStatus === 'login' ? setCurrentStatus('signup') : 
+    setCurrentStatus ('login')}>{currentStatus === 'signup' ? "Already have an account? Log in here" : 
+    "Sign up for an account"}</button>
    
     </form>
     </div>

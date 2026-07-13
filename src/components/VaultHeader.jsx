@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const VaultHeader = ({currentUser, onOpenForm, searchQuery, activeFilter, onFilterChange, onSearchChange}) => {
+const VaultHeader = ({currentUser, onOpenForm, searchQuery, activeFilter, onFilterChange, onSearchChange, onLogout}) => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     
     return (
@@ -31,6 +31,11 @@ const VaultHeader = ({currentUser, onOpenForm, searchQuery, activeFilter, onFilt
                     setIsDropdownOpen(false); }}>Video Files &#128249;</button>
                 </div>
             )}   
+        </div>
+
+        <div>
+            <button type="button"
+            onClick={(e) => onLogout()}>Exit Vault &#x2386;</button>
         </div>
        
        <div className="addToVault">  

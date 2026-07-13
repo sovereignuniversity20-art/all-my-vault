@@ -27,18 +27,27 @@ function App() {
     navigate('/dashboard');
   }
 
+  const handleLogout = () => {
+   setCurrentUser(null);
+    setIsAuthorized(false)
+    navigate('/');
+  }
  
   return (
     <main className='App'>
       <Routes>
         <Route path="/" element={<LoginPage onLogin={handleLogin} />} />
         <Route path="/dashboard" element={isAuthorized ? <DashboardPage items={items} 
-        currentUser={currentUser} onAdd={handleAdd} onDelete={handleDelete} onEdit={handleEdit} /> 
+        currentUser={currentUser} onAdd={handleAdd} onDelete={handleDelete} 
+        onEdit={handleEdit} onLogout={handleLogout} /> 
         : <Navigate to="/" />} />
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </main>
+    
 
   )
 };
 
 export default App;
+

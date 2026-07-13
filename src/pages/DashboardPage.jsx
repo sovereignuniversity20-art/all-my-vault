@@ -3,7 +3,7 @@
  import MediaCard from "../components/MediaCard";
  import MediaFormModal from "../components/MediaFormModal";
  
- const DashboardPage = ({items,currentUser, onAdd, onDelete, onEdit}) => {
+ const DashboardPage = ({items,currentUser, onAdd, onDelete, onEdit, onLogout}) => {
     const [isFormOpen, setIsFormOpen] = useState(false);
     const [editingItem, setEditingItem] = useState(null);
     const [activeFilter, setActiveFilter] = useState('');
@@ -43,7 +43,7 @@ if (searchQuery !== '') {
     <main className="dashboard">
         <VaultHeader currentUser={currentUser} onOpenForm={onOpenForm} 
         searchQuery={searchQuery} activeFilter={activeFilter} 
-        onFilterChange={setActiveFilter} onSearchChange={setSearchQuery} />
+        onFilterChange={setActiveFilter} onSearchChange={setSearchQuery} onLogout={onLogout} />
         {visibleItems.map((item) => (
        <MediaCard 
        key={item.id} 

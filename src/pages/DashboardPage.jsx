@@ -2,16 +2,17 @@
  import VaultHeader from "../components/VaultHeader";
  import MediaCard from "../components/MediaCard";
  import MediaFormModal from "../components/MediaFormModal";
+ import Footer from "../components/Footer";
  
- const DashboardPage = ({items,currentUser, onAdd, onDelete, onEdit, onLogout}) => {
+ const DashboardPage = ({items,currentUser, onAdd, onDelete, onEdit, onLogout, onOpenAbout}) => {
     const [isFormOpen, setIsFormOpen] = useState(false);
     const [editingItem, setEditingItem] = useState(null);
     const [activeFilter, setActiveFilter] = useState('');
     const [searchQuery, setSearchQuery] = useState('');
-
-    const onOpenForm = () => {
+    
+const onOpenForm = () => {
         setIsFormOpen(true);
-    }
+    };
 
 const handleFormSubmit = (itemData) => {
     if (editingItem) {
@@ -53,6 +54,7 @@ if (searchQuery !== '') {
        ))}
         <MediaFormModal isOpen={isFormOpen} editingItem={editingItem} 
         onSubmit={handleFormSubmit} onClose={() => setIsFormOpen(false)} />
+        <Footer onOpenAbout={onOpenAbout} />
     </main>
        
     )

@@ -8,8 +8,9 @@ import { Route, Routes, Navigate, useNavigate } from 'react-router-dom';
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
   const [items, setItems] = useState (sampleItems);
-  const [accounts, setAccounts] = useState ([])
+  const [accounts, setAccounts] = useState ([]);
   const [isAuthorized, setIsAuthorized] = useState (false);
+  const [isAboutOpen, setIsAboutOpen] = useState (false);
   const navigate = useNavigate();
 
   const handleDelete = (id) => {
@@ -25,13 +26,17 @@ function App() {
     setCurrentUser(userInfo);
     setIsAuthorized(true)
     navigate('/dashboard');
-  }
+  };
 
   const handleLogout = () => {
    setCurrentUser(null);
     setIsAuthorized(false)
     navigate('/');
-  }
+  };
+
+  const handleOpenAbout = () => {
+    setIsAboutOpen(true);
+  };
  
   return (
     <main className='App'>
@@ -39,12 +44,13 @@ function App() {
         <Route path="/" element={<LoginPage onLogin={handleLogin} />} />
         <Route path="/dashboard" element={isAuthorized ? <DashboardPage items={items} 
         currentUser={currentUser} onAdd={handleAdd} onDelete={handleDelete} 
-        onEdit={handleEdit} onLogout={handleLogout} /> 
+        onEdit={handleEdit} onLogout={handleLogout} 
+    onOpenAbout={handleOpenAbout}/> 
         : <Navigate to="/" />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </main>
-    
+
 
   )
 };

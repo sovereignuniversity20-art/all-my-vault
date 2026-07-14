@@ -17,7 +17,10 @@ const MediaCard = ({id, title,type, tags, thumbnail, dateAdded, onDelete, onEdit
         <h3>{title}</h3>
         {thumbnail ? <img src={thumbnail} alt={title} /> : <span>{typeIcons[type]}</span>}
         <h4>{type}</h4>
-        {tags.map((tag) => <span key={tag}>{tag}</span>)} 
+        <ul className="tags">
+             {tags.map((tag) => <li key={tag}>{tag}</li>)} 
+        </ul>
+       
         <h4>{dateAdded}</h4>
     </article>
 )};

@@ -80,7 +80,7 @@ const LoginPage = (props) => {
         {errors.name && <span>{errors.name}</span>}
         </label>
     )} 
-    <button type="submit">{currentStatus === 'signup' ? "Create Vault" : "Open Vault"}</button>
+    <button type="submit">{currentStatus === 'signup' ? "Create Vault" : "Unlock Vault"}</button>
     <button type="button" onClick={() => currentStatus === 'login' ? setCurrentStatus('signup') : 
     setCurrentStatus ('login')}>{currentStatus === 'signup' ? "Already have an account? Log in here" : 
     "Sign up for an account"}</button>

@@ -1,0 +1,18 @@
+import manifestImage from '../images/vault_manifest_document.png'
+
+const AboutOverlay = ({isOpen, onClose}) => {
+    if(!isOpen)
+        return (null);
+
+    return (
+        <div className="overlay-backdrop" onClick={onClose}>
+            <div className="manifest-content" role="dialog" aria-modal="true"
+            onClick={(e) => e.stopPropagation()}>
+            <img src={manifestImage} alt="All My Vault About" />
+            <button type="button" onClick={onClose}>&#10060;</button>
+        </div>
+        </div>      
+    );
+};
+
+export default AboutOverlay;

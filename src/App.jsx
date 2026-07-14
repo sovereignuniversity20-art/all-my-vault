@@ -4,6 +4,7 @@ import LoginPage from './pages/LoginPage.jsx';
 import DashboardPage from './pages/DashboardPage.jsx';
 import sampleItems from './data/sampleData.js';
 import { Route, Routes, Navigate, useNavigate } from 'react-router-dom';
+import AboutOverlay from './components/AboutOverlay.jsx';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
@@ -49,6 +50,8 @@ function App() {
         : <Navigate to="/" />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
+      <AboutOverlay isOpen={isAboutOpen} onClose={() =>
+          setIsAboutOpen(false)} />
     </main>
 
 

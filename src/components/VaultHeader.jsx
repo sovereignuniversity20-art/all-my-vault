@@ -19,16 +19,29 @@ const VaultHeader = ({currentUser, onOpenForm, searchQuery, activeFilter, onFilt
             onClick={(e) => setIsDropdownOpen (!isDropdownOpen)}>Filter &#128209;</button>
             {isDropdownOpen && (
                 <div>
-                    <button onClick={() => {onFilterChange('all');
+                    <ul>
+                    <li>
+                        <button onClick={() => {onFilterChange('all');
                     setIsDropdownOpen(false); }}>All &#127974;</button>
-                    <button onClick={() => {onFilterChange('pdf');
+                    </li>
+                    <li>
+                        <button onClick={() => {onFilterChange('pdf');
                     setIsDropdownOpen(false); }}>PDFs &#128195;</button>
-                    <button onClick={() => {onFilterChange('image');
+                    </li>
+                    <li>
+                        <button onClick={() => {onFilterChange('image');
                     setIsDropdownOpen(false); }}>Images &#128248;</button>
-                    <button onClick={() => {onFilterChange('audio');
+                    </li>
+                    <li>
+                        <button onClick={() => {onFilterChange('audio');
                     setIsDropdownOpen(false); }}>Audio Files &#127911;</button>
-                    <button onClick={() => {onFilterChange('video');
+                    </li>
+                    <li>
+                        <button onClick={() => {onFilterChange('video');
                     setIsDropdownOpen(false); }}>Video Files &#128249;</button>
+                    </li>
+                    </ul>
+                   
                 </div>
             )}   
         </div>

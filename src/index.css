@@ -8,3 +8,29 @@
 --off-white: #F7F5F3;
 }
 
+body{
+    margin:0;
+    font-family: 'Lato', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+.dashboard {
+    background-image: url('./images/vault_inside.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
+    height: 100vh;
+}

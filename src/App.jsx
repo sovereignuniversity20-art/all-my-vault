@@ -1,4 +1,4 @@
-import './App.css';
+import './index.css';
 import { useState } from 'react';
 import LoginPage from './pages/LoginPage.jsx';
 import DashboardPage from './pages/DashboardPage.jsx';

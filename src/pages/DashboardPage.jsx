@@ -3,6 +3,7 @@
  import MediaCard from "../components/MediaCard";
  import MediaFormModal from "../components/MediaFormModal";
  import Footer from "../components/Footer";
+
  
  const DashboardPage = ({items,currentUser, onAdd, onDelete, onEdit, onLogout, onOpenAbout}) => {
     const [isFormOpen, setIsFormOpen] = useState(false);
@@ -47,6 +48,7 @@ if (searchQuery !== '') {
         <VaultHeader currentUser={currentUser} onOpenForm={onOpenForm} 
         searchQuery={searchQuery} activeFilter={activeFilter} 
         onFilterChange={setActiveFilter} onSearchChange={setSearchQuery} onLogout={onLogout} />
+        
          <table>
         <thead>
             <tr>

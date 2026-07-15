@@ -1,4 +1,5 @@
 import { useState } from "react";
+import wheel from '../images/vault-wheel.png';
 
 const LoginPage = (props) => {
     const [name, setName] = useState('');
@@ -7,6 +8,8 @@ const LoginPage = (props) => {
     const [errors, setErrors] = useState({email:'', password:'', name:'', confirmPassword:''}); 
     const [currentStatus, setCurrentStatus] = useState('login');
     const [confirmPassword, setConfirmPassword] = useState ('');
+    const [isUnlocking, setIsUnlocking] = useState (false);
+
    
 
     const handleSubmit = (e) => {
@@ -37,20 +40,25 @@ const LoginPage = (props) => {
     } else if (currentStatus === 'signup' &&  password !== confirmPassword) {
         setErrors({...errors, confirmPassword:"Passwords do not match, please re-enter."});
     } else {
-        props.onLogin({
+        setIsUnlocking(true);
+        setTimeout(() => {
+              props.onLogin({
             name: currentStatus === 'signup' ? name: email, email: email});
-        console.log('Password is valid!');
-    }
-    };
-
+        }, 3500); 
+      
+    }};
    
     
     return (
     <div className="login">
-    <h1 className="title">All My Vault</h1>
-    <h4>Enter Your Email and Password to Access Vault</h4>
-    <form onSubmit={handleSubmit}>
-    {currentStatus === 'signup' && (
+        <div className={`door-left ${isUnlocking ? 'opening' : ''}`}></div>
+        <div className={`door-right ${isUnlocking ? 'opening' : ''}`}></div>
+        <img className={`wheel ${isUnlocking ? 'spinning' : ''}`} src={wheel} alt="vault wheel" />
+        <div className={`login-content ${isUnlocking ? 'fading' : ''}`}>
+            <h1 className="title">All My Vault</h1>
+        <h4>Enter Your Email and Password to Access Vault</h4>
+        <form onSubmit={handleSubmit}>
+        {currentStatus === 'signup' && (
         <div className="name">
              <label>
                 First and Last Name:
@@ -59,7 +67,7 @@ const LoginPage = (props) => {
             {errors.name && <span>{errors.name}</span>}
             </label>
         </div> 
-    )} 
+     )} 
         <div>
             <label className="email">
                 Email:
@@ -102,8 +110,10 @@ const LoginPage = (props) => {
             "Sign up for an account"}</button>
         </div>
     </form>
+        </div>
+        
     </div>
 );
-}
+};
 
 export default LoginPage;

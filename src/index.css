@@ -22,11 +22,20 @@
 
 .login h4 {
     position: absolute;
-    top: 34vh;
+    top: 32vh;
     left: 33vw;
     font-family: var(--font-title);
     font-size: 25px;
     color: var(--off-white);
+}
+
+.login-content {
+    z-index: 100;
+    transition: opacity 0.5s ease;
+}
+
+.login-content.fading {
+    opacity: 0;
 }
 
 .name {
@@ -79,7 +88,7 @@
 
 .login {
     position: relative;
-    background-image: url('./images/final_vault.png');
+    background-image: url('./images/vault_inside.png') ;
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
@@ -87,6 +96,52 @@
     height: 100vh;
     display: grid;
     padding: .1rem 2%;
+}
+
+.door-left {
+    position: absolute;
+    background-image: url('./images/final_vault.png');
+    transition: transform 1.5s ease-in-out 2s;
+    background-size: 200% 100%;
+    background-position: left;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+}
+
+.door-right {
+    position: absolute;
+    background-image: url('./images/final_vault.png');
+    transition: transform 1.5s ease-in-out 2s;
+    background-size: 200% 100%;
+    background-position: right;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+}
+
+.door-left.opening {
+    transform: translateX(-100%);
+}
+
+.door-right.opening {
+    transform: translateX(100%)
+}
+
+.wheel  {
+    position: absolute;
+    transition: transform 1.5s ease-in-out 0.5s, opacity 0.4s ease 1.8s;
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%) rotate(0deg);
+    
+}
+
+.wheel.spinning {
+    transform: translate(-50%, -50%) rotate(720deg);
+    opacity: 0;
 }
 
 header {

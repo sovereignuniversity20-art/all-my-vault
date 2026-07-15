@@ -12,15 +12,19 @@ const MediaCard = ({id, title,type, tags, thumbnail, dateAdded, onDelete, onEdit
 
     return(
         <article className="mediacard">
-        <ReusableButton label="🗑" onClick={() => onDelete(id)} variant="delete" />
+        <ReusableButton label= "🗑" onClick={() => onDelete(id)} variant="delete" />
         <ReusableButton label="✏️" onClick={() => onEdit({id, title, type, tags, thumbnail, dateAdded})} />
-        <h3>{title}</h3>
-        {thumbnail ? <img src={thumbnail} alt={title} /> : <span>{typeIcons[type]}</span>}
+            <br></br>
+            <br></br>
+        <h4>{title}</h4>
+            
+        {thumbnail ? <img className="image" src={thumbnail} alt={title} /> : <span className="card-icon">{typeIcons[type]}</span>}
         <h4>{type}</h4>
+            <br></br>
         <ul className="tags">
              {tags.map((tag) => <li key={tag}>{tag}</li>)} 
         </ul>
-       
+            <br></br>
         <h4>{dateAdded}</h4>
     </article>
 )};

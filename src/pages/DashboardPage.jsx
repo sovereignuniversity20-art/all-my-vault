@@ -48,8 +48,16 @@ if (searchQuery !== '') {
         <VaultHeader currentUser={currentUser} onOpenForm={onOpenForm} 
         searchQuery={searchQuery} activeFilter={activeFilter} 
         onFilterChange={setActiveFilter} onSearchChange={setSearchQuery} onLogout={onLogout} />
-        
-         <table>
+         <div className="card-grid">
+             {visibleItems.map((item) => (
+                 <MediaCard 
+            key={item.id} 
+                {...item} 
+                onDelete={onDelete} 
+                onEdit={handleOpenEdit}/> 
+            ))}
+       </div>
+         <table className="table">
         <thead>
             <tr>
                 <th>Type</th>
@@ -60,18 +68,13 @@ if (searchQuery !== '') {
             {mediaTypes.map((type) => (
                 <tr key={type}>
                     <td>{type}</td>
-                    <td> {items.filter((item) => item.type === type).length}</td>
+                    <td> {visibleItems.filter((item) => item.type === type).length}</td>
                 </tr>
             ))}
         </tbody>
        </table>
-        {visibleItems.map((item) => (
-       <MediaCard 
-       key={item.id} 
-       {...item} 
-       onDelete={onDelete} 
-       onEdit={handleOpenEdit}/> 
-       ))}
+      
+       
         <MediaFormModal isOpen={isFormOpen} editingItem={editingItem} 
         onSubmit={handleFormSubmit} onClose={() => setIsFormOpen(false)} />
         <Footer onOpenAbout={onOpenAbout} />

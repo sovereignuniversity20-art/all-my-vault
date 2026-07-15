@@ -50,7 +50,7 @@ function App() {
         : <Navigate to="/" />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
-      <AboutOverlay isOpen={isAboutOpen} onClose={() =>
+      <AboutOverlay className="about" isOpen={isAboutOpen} onClose={() =>
           setIsAboutOpen(false)} />
     </main>
 

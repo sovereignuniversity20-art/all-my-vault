@@ -1,3 +1,5 @@
+/*import 'eifel_tower.JPG' from './image/eifel_tower.jpg'*/
+
 const sampleItems = [
 {
   id:1,

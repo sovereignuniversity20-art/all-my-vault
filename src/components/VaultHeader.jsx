@@ -5,58 +5,55 @@ const VaultHeader = ({currentUser, onOpenForm, searchQuery, activeFilter, onFilt
     
     return (
     <header>
-        <h1>All My Vault &#127974;</h1>
-        <div className="searchbar">
-             <label>
-                Search &#128269;   
-                <input type="search" value={searchQuery}
-                onChange={(e) => onSearchChange(e.target.value)} /> 
-            </label>
-        </div>
-        
-        <div className="dropdown">
-            <button type="button" 
+        <div className="header-left">           
+            <button className="button" type="button" 
             onClick={(e) => setIsDropdownOpen (!isDropdownOpen)}>Filter &#128209;</button>
             {isDropdownOpen && (
-                <div>
+                <div className="dropdown">
                     <ul>
                     <li>
-                        <button onClick={() => {onFilterChange('all');
+                        <button className="button" onClick={() => {onFilterChange('all');
                     setIsDropdownOpen(false); }}>All &#127974;</button>
                     </li>
                     <li>
-                        <button onClick={() => {onFilterChange('pdf');
+                        <button className="button" onClick={() => {onFilterChange('pdf');
                     setIsDropdownOpen(false); }}>PDFs &#128195;</button>
                     </li>
                     <li>
-                        <button onClick={() => {onFilterChange('image');
+                        <button className="button" onClick={() => {onFilterChange('image');
                     setIsDropdownOpen(false); }}>Images &#128248;</button>
                     </li>
                     <li>
-                        <button onClick={() => {onFilterChange('audio');
+                        <button className="button" onClick={() => {onFilterChange('audio');
                     setIsDropdownOpen(false); }}>Audio Files &#127911;</button>
                     </li>
                     <li>
-                        <button onClick={() => {onFilterChange('video');
+                        <button className="button" onClick={() => {onFilterChange('video');
                     setIsDropdownOpen(false); }}>Video Files &#128249;</button>
                     </li>
                     </ul>
-                   
                 </div>
-            )}   
+            )}        
+
+             <button className="button" type="button" 
+                onClick={(e) => onOpenForm()}>Add to Vault  &#128229;
+            </button>
+            
+            <label>
+                Search &#128269;   
+                <input className="search-box" type="search" value={searchQuery}
+                onChange={(e) => onSearchChange(e.target.value)} /> 
+            </label>
         </div>
 
-        <div>
-            <button type="button"
+        <div className="header-center">
+            <h1>All My Vault &#127974;</h1>
+        </div>    
+        <div className="header-right">
+            <button className="button" type="button"
             onClick={(e) => onLogout()}>Exit Vault &#x2386;</button>
+            {currentUser && <h4>{(currentUser.name)}</h4>}
         </div>
-       
-       <div className="addToVault">  
-        <button type="button" 
-        onClick={(e) => onOpenForm()}>Add to Vault  &#128229;</button>  
-        </div>
-        
-        {currentUser && <h4>{(currentUser.name)}</h4>}
     </header> 
     )
 };

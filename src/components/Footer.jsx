@@ -3,7 +3,7 @@ const Footer = ({onOpenAbout}) => {
          <footer>
             Shawn Harrell LaunchCode Unit 
             1 Project FT-2026 
-            <button type="button"
+            <button className="button" type="button"
             onClick={onOpenAbout}>
                 About 💡
             </button>

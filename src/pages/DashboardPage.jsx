@@ -4,12 +4,14 @@
  import MediaFormModal from "../components/MediaFormModal";
  import Footer from "../components/Footer";
 
+
  
  const DashboardPage = ({items,currentUser, onAdd, onDelete, onEdit, onLogout, onOpenAbout}) => {
     const [isFormOpen, setIsFormOpen] = useState(false);
     const [editingItem, setEditingItem] = useState(null);
     const [activeFilter, setActiveFilter] = useState('');
     const [searchQuery, setSearchQuery] = useState('');
+    const [isVaultStatOpen, setIsVaultStatOpen] = useState(false);
     
 const onOpenForm = () => {
         setIsFormOpen(true);
@@ -56,8 +58,12 @@ if (searchQuery !== '') {
                 onDelete={onDelete} 
                 onEdit={handleOpenEdit}/> 
             ))}
-       </div>
-         <table className="table">
+         </div>
+       <div className="stats">
+         <button className="button" type="button" 
+         onClick={(e) => setIsVaultStatOpen(!isVaultStatOpen)}> Vault Stats</button>
+         {isVaultStatOpen && (
+           <table className="table">
         <thead>
             <tr>
                 <th>Type</th>
@@ -72,7 +78,9 @@ if (searchQuery !== '') {
                 </tr>
             ))}
         </tbody>
-       </table>
+       </table> 
+         )}
+       </div>
       
        
         <MediaFormModal isOpen={isFormOpen} editingItem={editingItem} 

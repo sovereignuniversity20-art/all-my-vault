@@ -6,6 +6,7 @@
 --pink-light: #F5DDE0;
 --border: #E0DCDA;
 --off-white: #F7F5F3;
+--font-title: "Abril Fatface";
 }
 
 header {
@@ -15,23 +16,41 @@ header {
     top: 1vh;
 }
 
+.logo {
+    position: absolute;
+    height: 60px;
+    top: -1.3vh;
+}
+
 .header-left {
     display: flex;
+    flex: 1;
     align-items: center;
+    align-content: center;
     gap: 10px;
     top: 2vh;
     color: var(--off-white);
+    left: 2vw;
 }
 
 .header-right {
     display: flex;
+    flex: 1;
+    justify-content: flex-end;
     align-items: center;
     gap: 10px;
     color: var(--off-white)
 }
 
 .header-center {
+    display: flex; 
+    justify-content: center; 
     align-items: center;
+    flex: 1;
+    align-content: center;
+    font-family: var(--font-title);
+    color: #E8B4BC;
+    justify-content: center;
 }
 
 .search-box {
@@ -110,10 +129,11 @@ body {
     border: 2px solid var(--burgundy);
     padding: .25rem .75rem;
     width: fit-content;
-    margin: .5rem;
-    margin-left: .25%;
-    bottom: 10vh;
-    left: 2%
+    margin: 0rem;
+    margin-left: 0rem;
+    bottom: 3.3vh;
+    left: -1.5vw;  
+    
     
 }
 
@@ -126,6 +146,8 @@ body {
     border: 2px solid var(--burgundy);
     padding: 1rem 10%;
     min-height: 10vh;
+    top: 2vh;
+    right: .55vw;;
 }
 
 .card-icon {
@@ -136,6 +158,13 @@ body {
     font-size: .75rem;
     list-style: none;    
 }
+.stats {
+    position: relative;
+    bottom: -2.75vh;
+    left: 2vw;
+    z-index: 10;
+    width: fit-content;
+}
 
 .about {
     width: 90%;
@@ -145,3 +174,23 @@ body {
     
 }
 
+.manifest {
+    position: relative;
+    bottom: 83vh;
+    left: 35vw;
+}
+
+.x-button {
+    position: absolute;
+    bottom: 79vh;
+    right: 35vw;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    backdrop-filter: blur(3px);
+    font-style: italic;
+}

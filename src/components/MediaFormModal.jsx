@@ -9,7 +9,7 @@ const MediaFormModal = ({isOpen, editingItem, onSubmit, onClose}) => {
         } else { 
             setFormValues({title: '', type: '', tags: [], dateAdded: ''}) 
         }  
-    }, [editingItem]);
+    }, [editingItem, isOpen]);
     
     const handleFileChange = (e) => {
         const file = e.target.files[0];

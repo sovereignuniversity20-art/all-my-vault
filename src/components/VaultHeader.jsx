@@ -1,4 +1,5 @@
 import { useState } from "react";
+import logo from '../images/logo.png'
 
 const VaultHeader = ({currentUser, onOpenForm, searchQuery, activeFilter, onFilterChange, onSearchChange, onLogout}) => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -47,7 +48,7 @@ const VaultHeader = ({currentUser, onOpenForm, searchQuery, activeFilter, onFilt
         </div>
 
         <div className="header-center">
-            <h1>All My Vault &#127974;</h1>
+            <h1>All My Vault<img src={logo} alt="All My Vault" className="logo" /></h1>
         </div>    
         <div className="header-right">
             <button className="button" type="button"

@@ -7,6 +7,86 @@
 --border: #E0DCDA;
 --off-white: #F7F5F3;
 --font-title: "Abril Fatface";
+--font-reg: "Lato";
+}
+
+.title {
+   position: absolute; 
+   font-family: var(--font-title);
+   top: 8.5vh;
+   left: 33.5vw; 
+   font-size: 90px;
+   color: var(--off-white);
+   -webkit-text-stroke: 2px var(--charcoal);
+}
+
+.login h4 {
+    position: absolute;
+    top: 34vh;
+    left: 33vw;
+    font-family: var(--font-title);
+    font-size: 25px;
+    color: var(--off-white);
+}
+
+.name {
+    position: absolute;
+    left: 37.5vw;
+    top: 63vh;
+    font-family: var(--font-reg);
+    font-size: 22px;
+    color: var(--off-white);
+}
+
+.email {
+    position: absolute;
+    left: 43vw;
+    top: 67vh;
+    font-family: var(--font-reg);
+    font-size: 22px;
+    color: var(--off-white);
+}
+
+.pass {
+    position: absolute;
+    left: 42vw;
+    top: 71vh;
+    font-family: var(--font-reg);
+    font-size: 22px;
+    color: var(--off-white);
+}
+
+.pass-confirm {
+    position: absolute;
+    left: 39vw;
+    top: 75vh;
+    font-family: var(--font-reg);
+    font-size: 22px;
+    color: var(--off-white);
+}
+
+.unlock-create {
+    position: absolute;
+    left: 47vw;
+    top: 80vh;
+}
+
+.login-signup {
+    position: absolute;
+    left: 45vw;
+    top: 84vh;
+}
+
+.login {
+    position: relative;
+    background-image: url('./images/final_vault.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
+    height: 100vh;
+    display: grid;
+    padding: .1rem 2%;
 }
 
 header {

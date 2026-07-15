@@ -1,4 +1,6 @@
-/*import 'eifel_tower.JPG' from './image/eifel_tower.jpg'*/
+import eiffelTower from '../images/eifel_tower.jpg'
+import soveuLogo from '../images/sove_u_logo.png'
+import logo from '../images/logo.png'
 
 const sampleItems = [
 {
@@ -11,11 +13,11 @@ const sampleItems = [
 },
 {
   id:2,
-  title: "Eifel Tower visit",
+  title: "Eiffel Tower visit",
   type: "image",
   tags: ["Europe", "travel", "Paris", "study-abroad"],
   dateAdded: "7.7.26",
-  thumbnail: null
+  thumbnail: eiffelTower
 }, 
 {
   id:3,
@@ -31,7 +33,7 @@ const sampleItems = [
   type: "image",
   tags: ["marketing", "business", "logo"],
   dateAdded: "7.7.26",
-  thumbnail: null 
+  thumbnail: soveuLogo 
 },
 {
   id:5,
@@ -43,11 +45,11 @@ const sampleItems = [
 },
 {
   id:6,
-  title: "website background from midjourney",
+  title: "AMV logo",
   type: "image",
   tags: ["ai generatiom", "marketing", "web design", "tech"],
   dateAdded: "7.7.26",
-  thumbnail: null
+  thumbnail: logo
 }
 ];
 

@@ -41,14 +41,16 @@ const VaultHeader = ({currentUser, onOpenForm, searchQuery, activeFilter, onFilt
             </button>
             
             <label>
-                Search &#128269;   
+                <span className="search">Search &#128269;</span>   
                 <input className="search-box" type="search" value={searchQuery}
                 onChange={(e) => onSearchChange(e.target.value)} /> 
             </label>
         </div>
 
         <div className="header-center">
-            <h1>All My Vault<img src={logo} alt="All My Vault" className="logo" /></h1>
+            <h1 className="title">
+                <span className="title-text">All My Vault</span>
+                <img src={logo} alt="All My Vault" className="logo" /></h1>
         </div>    
         <div className="header-right">
             <button className="button" type="button"

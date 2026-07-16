@@ -14,10 +14,10 @@
    position: absolute; 
    font-family: var(--font-title);
    top: 8.5vh;
-   left: 33.5vw; 
-   font-size: 90px;
+   left: 36vw; 
+   font-size: 70px;
    color: var(--off-white);
-   -webkit-text-stroke: 2px var(--charcoal);
+   -webkit-text-stroke: .25px var(--charcoal);
 }
 
 .login h4 {
@@ -88,7 +88,7 @@
 
 .login {
     position: relative;
-    background-image: url('./images/vault_inside.png') ;
+    background-image: url('./images/vault_inside.png');
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
@@ -177,9 +177,10 @@ header {
 }
 
 .logo {
-    position: absolute;
+    position: relative;
     height: 60px;
-    top: -1.3vh;
+    top: 2.5vh;
+    left: -.3vw;
 }
 
 .header-left {
@@ -191,6 +192,7 @@ header {
     top: 2vh;
     color: var(--off-white);
     left: 2vw;
+    flex-wrap: wrap;
 }
 
 .header-right {
@@ -199,23 +201,37 @@ header {
     justify-content: flex-end;
     align-items: center;
     gap: 10px;
-    color: var(--off-white)
+    color: var(--off-white);
+    flex-wrap: wrap;
 }
 
 .header-center {
+    position: absolute;
     display: flex; 
-    justify-content: center; 
+    justify-content: flex-end; 
     align-items: center;
     flex: 1;
     align-content: center;
     font-family: var(--font-title);
     color: #E8B4BC;
     justify-content: center;
+    flex-wrap: wrap;
+}
+
+.header-center h1 {
+    position: relative;
+    top: 1vh;
+    left: 40vw;
+}
+
+.title-text {
+    font-size: 28px;
 }
 
 .search-box {
     border: 2px solid var(--burgundy);
-    color: var(--charcoal)
+    color: var(--charcoal);
+    width: 100%;
 }
 
 .button {
@@ -248,12 +264,14 @@ body {
     list-style: none;
     padding: 0;
     margin: 0;
+    z-index: 40;
     
 }
 
 .image {
-    max-width: 100%;
-    height: auto;
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
 }
 
 
@@ -301,17 +319,23 @@ body {
     position: relative;
     background-color: var(--pink-light);
     backdrop-filter: blur(5px);
-    border-radius: 6px;
+    border-radius: 16px;
     font-size: 1rem; 
-    border: 2px solid var(--burgundy);
-    padding: 1rem 10%;
-    min-height: 10vh;
-    top: 2vh;
-    right: .55vw;;
+    border: 3px solid var(--burgundy);
+    padding: 1rem;
+   
+}
+
+.mediacard h4 {
+    max-width: 100%;    
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis;
 }
 
 .card-icon {
     font-size: 3rem;
+    
 }
 
 .tags {
@@ -348,4 +372,50 @@ footer {
     gap: 10px;
     backdrop-filter: blur(3px);
     font-style: italic;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 8px;
+    }
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    
+    }
+    .card-icon {
+        font-size: 1rem;
+    }
+    .header-center {
+        display: none;
+    }
+    .header-left {
+        
+    }
+ 
+}
+
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        gap: 8px;
+    }
+    .card-grid {
+        grid-template-columns: 1fr;
+    
+    }
+   
+    .card-icon {
+        font-size: 1rem;
+    }
+    .header-center  {
+        min-width: 5vw;
+    }
+    .stats {
+        display: none;
+    }
+    .header-center {
+        display: none;
+    }
+    
 }

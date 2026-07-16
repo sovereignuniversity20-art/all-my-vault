@@ -39,14 +39,15 @@ function App() {
     setIsAboutOpen(true);
   };
  
+  
+
   return (
     <main className='App'>
       <Routes>
-        <Route path="/" element={<LoginPage onLogin={handleLogin} />} />
+        <Route path="/" element={<LoginPage onLogin={handleLogin} onOpenAbout={handleOpenAbout}/>} />
         <Route path="/dashboard" element={isAuthorized ? <DashboardPage items={items} 
         currentUser={currentUser} onAdd={handleAdd} onDelete={handleDelete} 
-        onEdit={handleEdit} onLogout={handleLogout} 
-    onOpenAbout={handleOpenAbout}/> 
+        onEdit={handleEdit} onLogout={handleLogout} onOpenAbout={handleOpenAbout}/> 
         : <Navigate to="/" />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>

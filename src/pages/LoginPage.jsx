@@ -54,6 +54,12 @@ const LoginPage = (props) => {
         <div className={`door-left ${isUnlocking ? 'opening' : ''}`}></div>
         <div className={`door-right ${isUnlocking ? 'opening' : ''}`}></div>
         <img className={`wheel ${isUnlocking ? 'spinning' : ''}`} src={wheel} alt="vault wheel" />
+        <div className={`login-about ${isUnlocking ? 'fading' : ''}`}>
+            <button className="button" type="button"
+            onClick={props.onOpenAbout} >
+                About 💡
+            </button>
+        </div>
         <div className={`login-content ${isUnlocking ? 'fading' : ''}`}>
             <h1 className="title">All My Vault</h1>
         <h4>Enter Your Email and Password to Access Vault</h4>

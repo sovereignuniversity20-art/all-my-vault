@@ -1,5 +1,6 @@
 import { useState } from "react";
 import wheel from '../images/vault-wheel.png';
+import logo from '../images/logo.png';
 
 const LoginPage = (props) => {
     const [name, setName] = useState('');
@@ -61,7 +62,11 @@ const LoginPage = (props) => {
             </button>
         </div>
         <div className={`login-content ${isUnlocking ? 'fading' : ''}`}>
-            <h1 className="title">All My Vault</h1>
+            <h1> <span className="title">
+                    All My Vault
+                </span>
+                <img src={logo} alt="All My Vault" className="cover-logo" />
+            </h1>
         <h4>Enter Your Email and Password to Access Vault</h4>
         <form onSubmit={handleSubmit}>
         {currentStatus === 'signup' && (

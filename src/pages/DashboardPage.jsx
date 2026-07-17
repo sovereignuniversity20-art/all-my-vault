@@ -61,7 +61,7 @@ if (searchQuery !== '') {
          </div>
        <div className="stats">
          <button className="button" type="button" 
-         onClick={(e) => setIsVaultStatOpen(!isVaultStatOpen)}> Vault Stats</button>
+         onClick={(e) => setIsVaultStatOpen(!isVaultStatOpen)}>Vault Stats</button>
          {isVaultStatOpen && (
            <table className="table">
         <thead>

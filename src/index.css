@@ -13,23 +13,31 @@
 .title {
    position: absolute; 
    font-family: var(--font-title);
-   top: 8.5vh;
-   left: 36vw; 
+  
+   top: 10.5vh;
+   left: 32vw; 
    font-size: 70px;
    color: var(--off-white);
-   -webkit-text-stroke: .25px var(--charcoal);
+   -webkit-text-stroke: 1px var(--charcoal);
+}
+.cover-logo {
+    position: relative;
+    height: 90px;
+    top: 10vh;
+    left: 57vw;
 }
 
 .login h4 {
     position: absolute;
-    top: 32vh;
-    left: 33vw;
+    top: 26vh;
+    left: 30.75vw;
     font-family: var(--font-title);
     font-size: 25px;
     color: var(--off-white);
 }
 
 .login-content {
+    position: relative;
     z-index: 8;
     transition: opacity 0.5s ease;
 }
@@ -40,8 +48,8 @@
 
 .name {
     position: absolute;
-    left: 37.5vw;
-    top: 63vh;
+    left: 37vw;
+    top: 68vh;
     font-family: var(--font-reg);
     font-size: 22px;
     color: var(--off-white);
@@ -49,8 +57,8 @@
 
 .email {
     position: absolute;
-    left: 43vw;
-    top: 67vh;
+    left: 41vw;
+    top: 72vh;
     font-family: var(--font-reg);
     font-size: 22px;
     color: var(--off-white);
@@ -58,8 +66,8 @@
 
 .pass {
     position: absolute;
-    left: 42vw;
-    top: 71vh;
+    left: 40vw;
+    top: 76vh;
     font-family: var(--font-reg);
     font-size: 22px;
     color: var(--off-white);
@@ -67,8 +75,8 @@
 
 .pass-confirm {
     position: absolute;
-    left: 39vw;
-    top: 75vh;
+    left: 37vw;
+    top: 80vh;
     font-family: var(--font-reg);
     font-size: 22px;
     color: var(--off-white);
@@ -76,14 +84,14 @@
 
 .unlock-create {
     position: absolute;
-    left: 47vw;
-    top: 80vh;
+    left: 45vw;
+    top: 84.5vh;
 }
 
 .login-signup {
     position: absolute;
-    left: 45vw;
-    top: 84vh;
+    left: 43vw;
+    top: 89vh;
 }
 
 .login {
@@ -389,10 +397,40 @@ footer {
     .header-center {
         display: none;
     }
-    .header-left {
-        
+   
+    .title {
+        left: 19vw;
     }
- 
+    .cover-logo {
+        left: 56vw;
+        top: 21vh;
+    }
+    .name {
+        left: 25.5vw;
+    }
+    .email {
+        left: 35vw;
+    }
+    .pass {
+        left: 32vw;
+    }
+    .pass-confirm {
+        left: 26vw;
+    }
+    .unlock-create {
+        left: 43vw;
+    }
+    .login-signup {
+        left: 39vw;
+    }
+    .login-about {
+        left: 46vw;
+    }
+     .login h4 {
+        left: 16vw;
+        top: 26vh;
+    }
+    
 }
 
 @media (max-width: 480px) {
@@ -417,5 +455,49 @@ footer {
     .header-center {
         display: none;
     }
-    
+    .login h4 {
+        display: none;
+    }
+    .title {
+        left: 26.5vw;
+    }
+     .name {
+        left: 25.5vw;
+    }
+    .email {
+        left: 35vw;
+    }
+    .pass {
+        left: 32vw;
+    }
+    .pass-confirm {
+        left: 26vw;
+    }
+    .unlock-create {
+        left: 39vw;
+        top: 83.5vh;
+    }
+    .login-signup {
+        left: 33vw;
+        top: 88vh;
+    }
+    .login-about {
+        left: 43vw;
+    }
+    .name {
+        top: 64vh;
+        left: 30vw;
+    }
+    .email {
+        left: 24vw;
+        top: 71vh;
+    }
+    .pass {
+        left: 21.05vw;
+        top: 75vh;
+    }
+    .pass-confirm {
+        left: 12vw;
+        top: 79vh;
+    }
 }

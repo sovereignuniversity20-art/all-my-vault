@@ -224,6 +224,7 @@ header {
     color: #E8B4BC;
     justify-content: center;
     flex-wrap: wrap;
+    pointer-events: none;
 }
 
 .header-center h1 {

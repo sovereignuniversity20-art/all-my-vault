@@ -9,10 +9,11 @@ import AboutOverlay from './components/AboutOverlay.jsx';
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
   const [items, setItems] = useState (sampleItems);
-  const [accounts, setAccounts] = useState ([]);
   const [isAuthorized, setIsAuthorized] = useState (false);
   const [isAboutOpen, setIsAboutOpen] = useState (false);
   const navigate = useNavigate();
+
+  //Handlers for states and media card
 
   const handleDelete = (id) => {
     setItems(items.filter((item) => id !== item.id))

@@ -1,16 +1,69 @@
-# React + Vite
+# All My Vault 🏦
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+*A personal media vault to store, organize, and access what matters.*
 
-Currently, two official plugins are available:
+![All My Vault login](./screenshots/login.png)
+![All My Vault dashboard](./screenshots/dashboard.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## About
 
-## React Compiler
+All My Vault is a local-first React media archive that allows you to safely and securely store various types of media. This personalized approach allows you to access, organize, index and establish connections across media. Add, edit and delete media as needed in one easy to navigate, simple to use, centralized space.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Simulated login and signup with full form validation (regex email + password strength)
+- Cinematic vault door unlock animation (CSS transitions + React state)
+- Add, rename, and delete media items (full CRUD via React state)
+- Automatic file type detection and thumbnail generation on upload
+- Live search across titles and tags
+- Filter by media type (image, audio, video, PDF)
+- Vault Stats inventory toggle
+- About manifest overlay accessible from both pages
+- Protected routing with React Router
+- Fully responsive across desktop, tablet, and mobile
+- Custom brand identity: original logo, palette, and vault imagery
+
+## Tech Stack
+
+- React 18 with Vite
+- React Router
+- CSS — Grid, Flexbox, custom properties, media queries, animations
+- Google Fonts: Abril Fatface + Lato
+
+## Getting Started
+
+```bash
+git clone https://github.com/sovereignuniversity20-art/all-my-vault.git
+cd all-my-vault
+npm install
+npm run dev
+```
+
+Open the local URL Vite prints (typically http://localhost:5173).
+
+## Using the Vault
+
+**Sign up** with any name, a valid email format (something@something.xyz),
+and a password containing at least:
+- 8 characters
+- one uppercase letter
+- one lowercase letter
+- one number
+- one special character (! @ # $ %)
+
+Accounts are simulated in session state — they reset on refresh.
+Backend persistence arrives in v2.
+
+## Roadmap
+
+**v2 (planned):**
+- Media card lightbox view
+- Card layout redesign
+- Positioning architecture cleanup
+- Node/Express backend with real authentication and file storage
+
+## Author
+
+Shawn "Hero" Harrell
+LaunchCode Full-Time Software Development, 2026

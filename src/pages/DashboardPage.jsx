@@ -13,6 +13,9 @@
     const [searchQuery, setSearchQuery] = useState('');
     const [isVaultStatOpen, setIsVaultStatOpen] = useState(false);
     
+
+    //Handlers for Media Card Forms
+
 const onOpenForm = () => {
         setIsFormOpen(true);
     };
@@ -33,10 +36,14 @@ const handleOpenEdit = (item) => {
 
 const mediaTypes = ['image', 'audio', 'video', 'pdf']
 
+// Filter Functionality
+
 let visibleItems = items;
 if (activeFilter !== '' && activeFilter !== 'all') {
     visibleItems = visibleItems.filter((item) => item.type === activeFilter);  
 }
+
+// Search Functionality
 
 if (searchQuery !== '') {
     visibleItems = visibleItems.filter((item) =>

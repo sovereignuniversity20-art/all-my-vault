@@ -6,7 +6,8 @@ const VaultHeader = ({currentUser, onOpenForm, searchQuery, activeFilter, onFilt
     
     return (
     <header>
-        <div className="header-left">           
+        <div className="header-left">   
+
             <button className="button" type="button" 
             onClick={(e) => setIsDropdownOpen (!isDropdownOpen)}>Filter &#128209;</button>
             {isDropdownOpen && (

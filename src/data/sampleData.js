@@ -2,6 +2,8 @@ import eiffelTower from '../images/eifel_tower.jpg'
 import soveuLogo from '../images/sove_u_logo.png'
 import logo from '../images/logo.png'
 
+//Sample Data for Media inside vault
+
 const sampleItems = [
 {
   id:1,

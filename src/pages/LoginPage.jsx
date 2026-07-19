@@ -17,25 +17,25 @@ const LoginPage = (props) => {
         e.preventDefault();
         setErrors({email:'', password:'', confirmPassword:'', name:''});
 
-
+// Email and Password Validation //
     if (!/^[a-zA-Z0-9.! # \$ % & ' * + - / = ? ^ _  { | } ~.]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/.test(email)) {
         setErrors({...errors, email:'Please enter a valid email address'})
-        console.log('Email must use lowercase letters, uppercase letters, and special characters (! @ # $ %) only');
+        
     } else if ( password.length < 8) {
         setErrors({...errors, password:'Password must be at least 8 characters long'})
-        console.log('Password must be at least 8 characters long.');
+        
     } else if (!/[A-Z]/.test(password)) {
         setErrors({...errors, password:'Password must contain at least one uppercase letter.'})
-        console.log('Password must contain at least one uppercase letter.');
+        
     } else if (!/[a-z]/.test(password)) {
         setErrors({...errors, password:'Password must contain at least one lowercase letter.'})
-        console.log('Password must contain at least one lowercase letter.');    
+           
     } else if (!/[0-9]/.test(password)) {
         setErrors({...errors, password:'Password must contain at least one number.'})
-        console.log('Password must contain at least one number.');
+        
     } else if (!/[!@#$%]/.test(password)) {
         setErrors({...errors, password:'Password must contain at least one special character, ! @ # $ % .'})
-        console.log('Password must contain at least one special character.');
+        
     } else if (currentStatus === 'signup' && !name) {
         setErrors({...errors, name:"Name field can not be left empty"}); 
     } else if (currentStatus === 'signup' &&  password !== confirmPassword) {
@@ -56,6 +56,8 @@ const LoginPage = (props) => {
         <div className={`door-right ${isUnlocking ? 'opening' : ''}`}></div>
         <img className={`wheel ${isUnlocking ? 'spinning' : ''}`} src={wheel} alt="vault wheel" />
         <div className={`login-about ${isUnlocking ? 'fading' : ''}`}>
+            
+            
             <button className="button" type="button"
             onClick={props.onOpenAbout} >
                 About 💡

@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 const MediaFormModal = ({isOpen, editingItem, onSubmit, onClose}) => {
     const [formValues, setFormValues] = useState({title: '', type: '', tags: [], dateAdded: ''});
 
+   // Editing Media in Vault
+   
     useEffect(() => {
          if (editingItem) { 
             setFormValues(editingItem) 
@@ -10,6 +12,8 @@ const MediaFormModal = ({isOpen, editingItem, onSubmit, onClose}) => {
             setFormValues({title: '', type: '', tags: [], dateAdded: ''}) 
         }  
     }, [editingItem, isOpen]);
+
+    // Logic for handling and categorizing new media added to vault
     
     const handleFileChange = (e) => {
         const file = e.target.files[0];

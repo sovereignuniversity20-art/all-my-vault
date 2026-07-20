@@ -1,11 +1,13 @@
-
 {
   "name": "all-my-vault",
+  "homepage": "http://vault.sovereignuniv.com",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
@@ -13,6 +15,7 @@
   "dependencies": {
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
+    "react-router": "^8.2.0",
     "react-router-dom": "^7.18.1"
   },
   "devDependencies": {
@@ -23,6 +26,7 @@
     "eslint": "^10.6.0",
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-refresh": "^0.5.3",
+    "gh-pages": "^6.3.0",
     "globals": "^17.7.0",
     "vite": "^8.1.1"
   }
